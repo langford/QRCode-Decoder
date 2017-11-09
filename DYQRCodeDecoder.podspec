@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name                  = 'RLMRCodeDecoder'
+  s.name                  = 'DYQRCodeDecoder'
   s.version               = '1.1.3'
   s.summary               = 'An iOS QRCode/Datamatrix Scanner and Decoder.'
   s.homepage              = 'https://github.com/langford/QRCode-Decoder'
@@ -10,5 +10,4 @@ Pod::Spec.new do |s|
   s.source                = { :git => 'https://github.com/langford/QRCode-Decoder.git', :tag => s.version }
   s.source_files          = 'Class/*.{h,m}'
   s.resource              = 'Class/*.png'
-
 end
