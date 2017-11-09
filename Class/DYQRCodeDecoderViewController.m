@@ -333,7 +333,7 @@ UIImagePickerControllerDelegate> {
             dispatch_queue_t dispatchQueue;
             dispatchQueue = dispatch_queue_create("myQueue", NULL);
             [captureMetadataOutput setMetadataObjectsDelegate:self queue:dispatchQueue];
-            [captureMetadataOutput setMetadataObjectTypes:[NSArray arrayWithObject:AVMetadataObjectTypeQRCode]];
+            [captureMetadataOutput setMetadataObjectTypes:[NSArray arrayWithObjects:AVMetadataObjectTypeQRCode,AVMetadataObjectTypeDataMatrixCode,nil]];
             
             // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             _videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];
@@ -378,7 +378,9 @@ UIImagePickerControllerDelegate> {
     if (metadataObjects != nil && [metadataObjects count] > 0) {
         // Get the metadata object.
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
-        if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
+      if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode] ||
+          [[metadataObj type] isEqualToString:AVMetadataObjectTypeDataMatrixCode]
+          ) {
             // If the found metadata is equal to the QR code metadata then update the status label's text,
             // stop reading and change the bar button item's title and the flag's value.
             // Everything is done on the main thread.
@@ -411,3 +413,4 @@ UIImagePickerControllerDelegate> {
 }
 
 @end
+
