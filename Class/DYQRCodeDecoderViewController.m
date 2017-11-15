@@ -89,11 +89,12 @@ UIImagePickerControllerDelegate> {
                                                               style:UIBarButtonItemStylePlain
                                                              target:self
                                                              action:@selector(cancel)];
-        
+        /*
         _rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Album"
                                                                style:UIBarButtonItemStylePlain
                                                               target:self
                                                               action:@selector(pickImage)];
+         */
     }
     return self;
 }
@@ -385,7 +386,7 @@ UIImagePickerControllerDelegate> {
             // stop reading and change the bar button item's title and the flag's value.
             // Everything is done on the main thread.
             
-            void(^block)() = ^(void) {
+            void(^block)(void) = ^(void) {
                 [self stopReading];
                 [self cancel];
                 if (![metadataObj stringValue] || [[metadataObj stringValue] length] == 0) {
@@ -413,4 +414,5 @@ UIImagePickerControllerDelegate> {
 }
 
 @end
+
 
