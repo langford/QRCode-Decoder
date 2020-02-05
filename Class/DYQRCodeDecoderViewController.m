@@ -318,52 +318,8 @@ UIImagePickerControllerDelegate> {
                                                          multiplier:1.0
                                                            constant:0.0]];
     if (_needsScanAnnimation) {
-//        UIView * scanView = [[UIView alloc] init];
-//        [scanView setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
-//        [self.view addSubview:scanView];
-//        [scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
-//
-//        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
-//                                                              attribute:NSLayoutAttributeTop
-//                                                              relatedBy:NSLayoutRelationEqual
-//                                                                 toItem:_viewPreview
-//                                                              attribute:NSLayoutAttributeTop
-//                                                             multiplier:1.0
-//                                                               constant:0.0]];
-//        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
-//                                                              attribute:NSLayoutAttributeBottom
-//                                                              relatedBy:NSLayoutRelationEqual
-//                                                                 toItem:_viewPreview
-//                                                              attribute:NSLayoutAttributeBottom
-//                                                             multiplier:1.0
-//                                                               constant:0.0]];
-//        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
-//                                                              attribute:NSLayoutAttributeLeft
-//                                                              relatedBy:NSLayoutRelationEqual
-//                                                                 toItem:_viewPreview
-//                                                              attribute:NSLayoutAttributeLeft
-//                                                             multiplier:1.0
-//                                                               constant:0.0]];
-//        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
-//                                                              attribute:NSLayoutAttributeRight
-//                                                              relatedBy:NSLayoutRelationEqual
-//                                                                 toItem:_viewPreview
-//                                                              attribute:NSLayoutAttributeRight
-//                                                             multiplier:1.0
-//                                                               constant:0.0]];
-        
+
         CGFloat frameWidth = SCREEN_WIDTH * 2 / 3;
-        
-        //create path
-        UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        
-        [path appendPath:[[UIBezierPath bezierPathWithRoundedRect:CGRectMake(SCREEN_WIDTH / 6, SCREEN_HEIGHT / 2 - SCREEN_WIDTH / 3, frameWidth, frameWidth) cornerRadius:0] bezierPathByReversingPath]];
-        
-        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-        
-        shapeLayer.path = path.CGPath;
-        
-        //[scanView.layer setMask:shapeLayer];
 
         
         UIImageView * imageView = [[UIImageView alloc] init];
