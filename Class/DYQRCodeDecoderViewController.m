@@ -125,6 +125,143 @@ UIImagePickerControllerDelegate> {
     [self stopReading];
 }
 
+- (void)createScanView:(UIView*)viewToSurround {
+  UIView * scanViewL = [[UIView alloc] init];
+  [scanViewL setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
+  [self.view addSubview:scanViewL];
+  [scanViewL setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewL
+                                                        attribute:NSLayoutAttributeTop
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:viewToSurround
+                                                        attribute:NSLayoutAttributeTop
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewL
+                                                        attribute:NSLayoutAttributeBottom
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:viewToSurround
+                                                        attribute:NSLayoutAttributeBottom
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewL
+                                                        attribute:NSLayoutAttributeLeft
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_viewPreview
+                                                        attribute:NSLayoutAttributeLeft
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewL
+                                                        attribute:NSLayoutAttributeRight
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:viewToSurround
+                                                        attribute:NSLayoutAttributeLeft
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+
+  UIView * scanViewR = [[UIView alloc] init];
+  [scanViewR setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
+  [self.view addSubview:scanViewR];
+  [scanViewR setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewR
+                                                        attribute:NSLayoutAttributeTop
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:viewToSurround
+                                                        attribute:NSLayoutAttributeTop
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewR
+                                                        attribute:NSLayoutAttributeBottom
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:viewToSurround
+                                                        attribute:NSLayoutAttributeBottom
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewR
+                                                        attribute:NSLayoutAttributeLeft
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:viewToSurround
+                                                        attribute:NSLayoutAttributeRight
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewR
+                                                        attribute:NSLayoutAttributeRight
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_viewPreview
+                                                        attribute:NSLayoutAttributeRight
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  UIView * scanViewT = [[UIView alloc] init];
+  [scanViewT setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
+  [self.view addSubview:scanViewT];
+  [scanViewT setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewT
+                                                        attribute:NSLayoutAttributeTop
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_viewPreview
+                                                        attribute:NSLayoutAttributeTop
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewT
+                                                        attribute:NSLayoutAttributeBottom
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:viewToSurround
+                                                        attribute:NSLayoutAttributeTop
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewT
+                                                        attribute:NSLayoutAttributeLeft
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_viewPreview
+                                                        attribute:NSLayoutAttributeLeft
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewT
+                                                        attribute:NSLayoutAttributeRight
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_viewPreview
+                                                        attribute:NSLayoutAttributeRight
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+
+  UIView * scanViewB = [[UIView alloc] init];
+  [scanViewB setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
+  [self.view addSubview:scanViewB];
+  [scanViewB setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewB
+                                                        attribute:NSLayoutAttributeTop
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:viewToSurround
+                                                        attribute:NSLayoutAttributeBottom
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewB
+                                                        attribute:NSLayoutAttributeBottom
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_viewPreview
+                                                        attribute:NSLayoutAttributeBottom
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewB
+                                                        attribute:NSLayoutAttributeLeft
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_viewPreview
+                                                        attribute:NSLayoutAttributeLeft
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanViewB
+                                                        attribute:NSLayoutAttributeRight
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_viewPreview
+                                                        attribute:NSLayoutAttributeRight
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNotifications];
@@ -181,39 +318,39 @@ UIImagePickerControllerDelegate> {
                                                          multiplier:1.0
                                                            constant:0.0]];
     if (_needsScanAnnimation) {
-        UIView * scanView = [[UIView alloc] init];
-        [scanView setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
-        [self.view addSubview:scanView];
-        [scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
-        
-        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
-                                                              attribute:NSLayoutAttributeTop
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:_viewPreview
-                                                              attribute:NSLayoutAttributeTop
-                                                             multiplier:1.0
-                                                               constant:0.0]];
-        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
-                                                              attribute:NSLayoutAttributeBottom
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:_viewPreview
-                                                              attribute:NSLayoutAttributeBottom
-                                                             multiplier:1.0
-                                                               constant:0.0]];
-        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
-                                                              attribute:NSLayoutAttributeLeft
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:_viewPreview
-                                                              attribute:NSLayoutAttributeLeft
-                                                             multiplier:1.0
-                                                               constant:0.0]];
-        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
-                                                              attribute:NSLayoutAttributeRight
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:_viewPreview
-                                                              attribute:NSLayoutAttributeRight
-                                                             multiplier:1.0
-                                                               constant:0.0]];
+//        UIView * scanView = [[UIView alloc] init];
+//        [scanView setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
+//        [self.view addSubview:scanView];
+//        [scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
+//
+//        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
+//                                                              attribute:NSLayoutAttributeTop
+//                                                              relatedBy:NSLayoutRelationEqual
+//                                                                 toItem:_viewPreview
+//                                                              attribute:NSLayoutAttributeTop
+//                                                             multiplier:1.0
+//                                                               constant:0.0]];
+//        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
+//                                                              attribute:NSLayoutAttributeBottom
+//                                                              relatedBy:NSLayoutRelationEqual
+//                                                                 toItem:_viewPreview
+//                                                              attribute:NSLayoutAttributeBottom
+//                                                             multiplier:1.0
+//                                                               constant:0.0]];
+//        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
+//                                                              attribute:NSLayoutAttributeLeft
+//                                                              relatedBy:NSLayoutRelationEqual
+//                                                                 toItem:_viewPreview
+//                                                              attribute:NSLayoutAttributeLeft
+//                                                             multiplier:1.0
+//                                                               constant:0.0]];
+//        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scanView
+//                                                              attribute:NSLayoutAttributeRight
+//                                                              relatedBy:NSLayoutRelationEqual
+//                                                                 toItem:_viewPreview
+//                                                              attribute:NSLayoutAttributeRight
+//                                                             multiplier:1.0
+//                                                               constant:0.0]];
         
         CGFloat frameWidth = SCREEN_WIDTH * 2 / 3;
         
@@ -226,7 +363,8 @@ UIImagePickerControllerDelegate> {
         
         shapeLayer.path = path.CGPath;
         
-        [scanView.layer setMask:shapeLayer];
+        //[scanView.layer setMask:shapeLayer];
+
         
         UIImageView * imageView = [[UIImageView alloc] init];
         [imageView setBackgroundColor:[UIColor clearColor]];
@@ -256,7 +394,8 @@ UIImagePickerControllerDelegate> {
                                                              multiplier:1.0
                                                                constant:0.0]];
         
-        
+        [self createScanView:imageView];
+
         _lineImageView = [[UIImageView alloc] init];
         CGFloat lineHeight = frameWidth * _lineImage.size.height / _lineImage.size.width;
         _lineRect0 = CGRectMake(0, 0, frameWidth, lineHeight);
